@@ -13,8 +13,8 @@ class Post:
     score: int
 
 
-# extract 5 latest posts and collect them in the list
 def get_posts(subreddit, count):
+    """Extract $count latest posts and collect them in the list"""
     result = []
     try:
         for submission in subreddit.top(limit=count):
@@ -26,20 +26,21 @@ def get_posts(subreddit, count):
     return result
 
 
-# connect with Reddit and print posts in JSON format
 def main():
+    """Connect with Reddit and print posts in JSON format"""
     try:
         reddit = praw.Reddit("default")
     except ClientException as e:
         print(f"Client error: {e}. Please check credentials or config", file=sys.stderr)
+        return
 
     try:
         subreddit = reddit.subreddit("cosmos")
     except Exception as e:
-        print(f"Subreddit field should not be empty: {e}", file=sys.stderr)
+        print(f"Wrong subreddit field: {e}", file=sys.stderr)
+        return
 
     posts = get_posts(subreddit, 5)
-
     print(json.dumps(posts, indent=4, ensure_ascii=False))
 
 
