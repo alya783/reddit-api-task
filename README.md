@@ -9,7 +9,7 @@ SSH
 ```
 git clone git@github.com:alya783/reddit-api-task.git
 ```
-HTML
+HTTPS
 ```
 git clone https://github.com/alya783/reddit-api-task.git
 ```
