@@ -3,9 +3,15 @@ This script prints provided amount of latest posts from subreddit in JSON format
 
 ## How to set up and run the project
 
-Clone the repository
+Clone the repository via
+
+SSH
 ```
 git clone git@github.com:alya783/reddit-api-task.git
+```
+HTML
+```
+git clone https://github.com/alya783/reddit-api-task.git
 ```
 Navigate to project directory:
 ```
@@ -15,6 +21,8 @@ Install dependences:
 ```
 poetry install --no-root
 ```
+If you don't use poetry yet, read the manual how to install it https://python-poetry.org/docs/#system-requirements
+
 Fill in credentials in praw.ini file
 ```
 client_id=YOUR_ID
